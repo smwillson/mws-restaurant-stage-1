@@ -22,7 +22,7 @@ initMap = () => {
         scrollWheelZoom: false
       });
       L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}', {
-        mapboxToken:'pk.eyJ1Ijoic213aWxsc29uIiwiYSI6ImNqbWh0bWp0ZjBydDUza211cXo3NXNidG0ifQ.06QDRZXuLAiihfgmBsReaw',
+        mapboxToken: 'pk.eyJ1Ijoic213aWxsc29uIiwiYSI6ImNqbWh0bWp0ZjBydDUza211cXo3NXNidG0ifQ.06QDRZXuLAiihfgmBsReaw',
         maxZoom: 18,
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
           '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
@@ -108,15 +108,15 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
   const hours = document.getElementById('restaurant-hours');
   for (let key in operatingHours) {
     const row = document.createElement('tr');
-    row.setAttribute("scope","row");
+    row.setAttribute("scope", "row");
 
     const day = document.createElement('td');
-    day.setAttribute("scope","col");
+    day.setAttribute("scope", "col");
     day.innerHTML = key;
     row.appendChild(day);
 
     const time = document.createElement('td');
-    time.setAttribute("scope","col");
+    time.setAttribute("scope", "col");
     time.innerHTML = operatingHours[key];
     row.appendChild(time);
 
@@ -173,7 +173,7 @@ createReviewHTML = (review) => {
 /**
  * Add restaurant name to the breadcrumb navigation menu
  */
-fillBreadcrumb = (restaurant=self.restaurant) => {
+fillBreadcrumb = (restaurant = self.restaurant) => {
   const breadcrumb = document.getElementById('breadcrumb');
   const li = document.createElement('li');
   li.innerHTML = restaurant.name;

@@ -14,6 +14,13 @@ body {
   position: relative;
 }
 
+select:focus {
+    box-shadow: 0 0 3pt 2pt blue;
+}
+
+a:focus {
+    box-shadow: 0 0 3pt 2pt blue;
+}
 #index-body {
   display: grid;
   grid-template-columns: 1fr;
@@ -82,7 +89,6 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   letter-spacing: 1px;
   padding: 25px;
   text-align: center;
-  text-transform: uppercase;
   width: auto;
   /*width: calc(50% - 80px);*/
 }
@@ -235,7 +241,7 @@ nav h1 a {
 #restaurants-list li a {
   background-color: orange;
   border-bottom: 3px solid #eee;
-  color: #fff;
+  color: black;
   display: inline-block;
   font-size: 10pt;
   margin: 15px 0 0;
@@ -402,12 +408,12 @@ nav h1 a {
 
 #reviews-container-div {
   grid-area: reviewsContainer;
-  overflow: scroll;
   position: relative;
 }
 
 #reviews-container {
   padding: 30px 40px 80px;
+  overflow-y:scroll;
 }
 
 #reviews-container h2 {

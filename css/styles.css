@@ -37,16 +37,62 @@ div.errMsgImg {
   text-align: center;
 }
 
-h1.errMsg {
+h1.blinking {
   text-align: center;
   text-transform: full-width;
   font-family: cursive sans-serif;
+}
+
+/*https://html-online.com/articles/blinking-text-css-animation/*/
+.blinking {
+  animation: blinkingText 2s infinite;
+}
+
+@keyframes blinkingText {
+  0% {
+    color: #000;
+  }
+
+  49% {
+    color: blue;
+  }
+
+  50% {
+    color: red;
+  }
+
+  99% {
+    color: green;
+  }
+
+  100% {
+    color: #000;
+  }
 }
 
 div.restaurants-list-class {
   padding: 15px;
   text-align: center;
 }
+
+div.errMsgClass {
+  text-align: center;
+}
+
+div.errMsgClass div.errMsgClass a {
+  color: #3344dd
+}
+
+/* visited link */
+div.errMsgClass a:visited {
+    color: #884488;
+}
+
+/* mouse over link */
+div.errMsgClass a:hover {
+    color: #bb1122;
+}
+
 
 #index-body {
   display: grid;
@@ -204,7 +250,7 @@ nav h1 a {
   line-height: 1;
   margin: 0 20px;
   grid-area: text;
-  align-self: center;
+  align-self: flex-end;
 }
 
 .filter-options select {
@@ -540,10 +586,6 @@ nav h1 a {
     grid-column-start: 2;
   }
 
-  #restaurants-list li:nth-last-child(-n+2) {
-    grid-column-start: 1;
-  }
-
   /*============================= filtering for restaurant.html ==================================*/
   #footer.restaurant-footer {
     width: auto;
@@ -575,10 +617,6 @@ nav h1 a {
 
   #restaurants-list li:nth-last-child(-n+1) {
     grid-column-start: 2;
-  }
-
-  #restaurants-list li:nth-last-child(-n+2) {
-    grid-column-start: 1;
   }
 
   .filter-options {

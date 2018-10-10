@@ -1,16 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <link href="/css/styles.css?version=51" type="text/css">
+  <link rel="stylesheet" href="css/styles.css?version=51" type="text/css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 
-  <h1 class="errMsg"> Our servers seem to asleep the moment. Hang on while we wake 'em up.</h1>
+  <h1 class="blinking">No Internet </h1>
+  <div class="errMsgClass">
+    <p> Oh no! Looks like we are unable to display this page.</p>
+    <p> Head back to the <a href="/" title="Go back to the restaurant reviews home page"><strong>main</strong></a> page.</p>
+    <p> If you want to hang out here, Nacho will keep you company</p>
+  </div>
+
   <div class="errMsgImg"></div>
 
   <script type="application/javascript" charset="utf-8" src="js/offline.js"></script>
+  <script>
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker
+           .register('/sw.js')
+           .then(function() { console.log("Service Worker Registered"); });
+}
+</script>
 </body>
 
 </html>

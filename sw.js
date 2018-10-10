@@ -2,7 +2,6 @@ var RESTAURANTS_CACHE = 'restaurantReviewsCache';
 
 
 self.addEventListener('install', e => {
-  console.log('huuray!');
   e.waitUntil(
     caches.open(RESTAURANTS_CACHE).then(cache => {
 
@@ -25,16 +24,18 @@ self.addEventListener('install', e => {
   );
 });
 
+self.addEventListener('activate', event => {
+  event.waitUntil(self.clients.claim());
+});
 
-self.addEventListener('fetch', event=> {
-  console.log(event.request.url);
+//fetch from cache or network
 
+self.addEventListener('fetch', event => {
   event.respondWith(
     caches.open(RESTAURANTS_CACHE)
-    .then (cache =>caches.match(event.request))
-    .then(=> response) {
-      return response || fetch(event.request)
-      .catch( => err {
+      .then(cache => cache.match(event.request))
+      .then(response => {
+      return response || fetch(event.request).catch(err=> {
         return caches.match('/offline.html');
       });
     })

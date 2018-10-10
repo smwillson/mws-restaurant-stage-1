@@ -74,7 +74,6 @@ ul, li {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 10pt;
   color: #333;
-  background-color: black;
 }
 
 a {
@@ -192,14 +191,14 @@ nav h1 a {
   width: 100%;
   height: 100%;
   background-color: #3397DB;
-  grid-template-columns: .50fr .75fr .75fr;
+  grid-template-columns: .30fr .75fr .75fr;
   align-items: start;
   grid-template-areas: "text select1 select2";
 }
 
 .filter-options h2 {
   color: black;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   font-family: sans-serif;
   line-height: 1;
@@ -537,6 +536,14 @@ nav h1 a {
     justify-content: space-evenly;
   }
 
+  #restaurants-list li:nth-last-child(-n+1) {
+    grid-column-start: 2;
+  }
+
+  #restaurants-list li:nth-last-child(-n+2) {
+    grid-column-start: 1;
+  }
+
   /*============================= filtering for restaurant.html ==================================*/
   #footer.restaurant-footer {
     width: auto;
@@ -564,6 +571,14 @@ nav h1 a {
 
   #restaurants-list li {
     width: auto;
+  }
+
+  #restaurants-list li:nth-last-child(-n+1) {
+    grid-column-start: 2;
+  }
+
+  #restaurants-list li:nth-last-child(-n+2) {
+    grid-column-start: 1;
   }
 
   .filter-options {
@@ -601,13 +616,16 @@ nav h1 a {
   }
 
   .filter-options {
-    padding-left: 5%;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: "select1 select2";
+    grid-template-columns: .50fr 1fr 1fr;
+    grid-template-areas: "text select1 select2";
   }
 
-  .filter-options select {
-    width: 250px;
+  #neighborhoods-select {
+    width: 80%;
+  }
+
+  #cuisines-select {
+    width: 80%;
   }
 
   /*============================= filtering for restaurant.html ==================================*/
@@ -623,7 +641,7 @@ nav h1 a {
 */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   #index-body {
-    grid-template-columns: 2fr;
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-template-areas:
       "header"
@@ -632,8 +650,16 @@ nav h1 a {
   }
 
   #restaurants-list {
-    grid-template-columns: repeat(2, 2fr);
+    grid-template-columns: repeat(2, 1fr);
     justify-content: space-evenly;
+  }
+
+  #neighborhoods-select {
+    width: 70%;
+  }
+
+  #cuisines-select {
+    width: 70%;
   }
 
   /*============================= filtering for restaurant.html ==================================*/
@@ -658,14 +684,30 @@ nav h1 a {
   }
 
   #restaurants-list {
-    grid-template-columns: repeat(2, 2fr);
-    justify-content: start;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+  }
+
+  #restaurants-list li {
+    padding: 0 10px 25px;
   }
 
   .filter-options {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: "select1 select2";
-    justify-content: start;
+    grid-template-columns: repeat(3, 0.5fr);
+    grid-template-areas: "text select1 select2";
+  }
+
+  .filter-options h2 {
+    font-size: 1rem;
+    margin: auto;
+  }
+
+  #neighborhoods-select {
+    width: 75%;
+  }
+
+  #cuisines-select {
+    width: 75%;
   }
 
   #footer.restaurant-footer {
@@ -689,8 +731,8 @@ nav h1 a {
   }
 
   #restaurants-list {
-    grid-template-columns: repeat(2, 2fr);
-    justify-content: space-evenly;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
   }
 
   #footer.restaurant-footer {
@@ -718,8 +760,8 @@ nav h1 a {
   }
 
   .filter-options {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: "select1 select2";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "text select1 select2";
   }
 
   .filter-options select {
@@ -755,17 +797,35 @@ nav h1 a {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     justify-content: center;
-    padding-left: 0;
   }
 
   .filter-options {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: "select1 select2";
-    justify-content: start;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "text"
+      "select1"
+      "select2";
   }
 
-  .filter-options select {
-    width: 150px;
+  #neighborhoods-select {
+    align-self: center;
+    width: 70%;
+    margin: auto;
+    border: 1px solid black;
+  }
+
+  #cuisines-select {
+    align-self: center;
+    width: 70%;
+    height: 50px;
+    margin: auto;
+    border: 1px solid black;
+  }
+
+  .filter-options h2 {
+    font-size: 1rem;
+    margin: auto;
   }
 
   #map-container.map-container-class {

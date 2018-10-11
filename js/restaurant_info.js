@@ -155,7 +155,7 @@ createReviewHTML = (review) => {
   li.setAttribute("tabindex",0);
   const name = document.createElement('p');
   name.innerHTML = review.name;
-  name.classList.add("namestyle");
+  name.classList.add("nameStyle");
   name.setAttribute("tabindex",0);
   li.appendChild(name);
 
@@ -166,6 +166,7 @@ createReviewHTML = (review) => {
 
   const rating = document.createElement('p');
   rating.innerHTML = `Rating: ${review.rating}`;
+  rating.classList.add("ratingStyle");
   rating.setAttribute("tabindex",0);
   li.appendChild(rating);
 

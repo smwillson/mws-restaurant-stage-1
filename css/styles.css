@@ -548,11 +548,14 @@ nav h1 a {
   padding: 0 20px 20px;
   position: relative;
   margin: auto;
+  border-radius: 25px;
 }
 
 #reviews-list li p {
   margin: 0 0 10px;
   color: black;
+  height: 100%;
+
 }
 
 #restaurant-hours-div {
@@ -582,13 +585,16 @@ nav h1 a {
   margin: auto;
 }
 
-.namestyle {
+p.nameStyle {
   text-transform: capitalize;
   text-decoration: underline;
   font-weight: bold;
   padding-top: 10px;
 }
-
+p.ratingStyle{
+  display: inline;
+  background-color: orange;
+}
 /*========================Add @media  ============================= */
 /* media queries: https://gist.github.com/gokulkrishh/242e68d1ee94ad05f488 */
 /*
@@ -605,7 +611,7 @@ nav h1 a {
   }
 
   #restaurants-list {
-    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-columns: repeat(3, 1fr);;
     justify-content: space-evenly;
   }
 

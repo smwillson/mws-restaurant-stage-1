@@ -1,3 +1,5 @@
+/* service worker in depth: https://github.com/GoogleChromeLabs/airhorn/blob/master/app/index.html*/
+
 var RESTAURANTS_CACHE = 'restaurantReviewsCache';
 
 

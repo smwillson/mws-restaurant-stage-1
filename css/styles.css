@@ -22,21 +22,26 @@ a:focus {
   box-shadow: 0 0 3pt 2pt blue;
 }
 
-div.errMsgImg>img {
-  max-width: 100%;
-  min-width: 100%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50px;
-  height: auto;
-}
-
 div.errMsgImg {
   padding: 50px;
   text-align: center;
 }
 
+div.errMsgImg > img {
+  max-width: 100%;
+  min-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: auto;
+}
+
+
+
+div.errMsgClass >p{
+  font-size: 15pt;
+}
 h1.blinking {
   text-align: center;
   text-transform: full-width;
@@ -79,7 +84,7 @@ div.errMsgClass {
   text-align: center;
 }
 
-div.errMsgClass div.errMsgClass a {
+div.errMsgClass  a {
   color: #3344dd
 }
 
@@ -176,6 +181,7 @@ nav {
 
 nav h1 {
   margin: auto;
+  font-weight: bold;
 }
 
 nav h1 a {
@@ -382,6 +388,7 @@ nav h1 a {
   top: 0;
   width: 100%;
   z-index: 1000;
+  margin: auto;;
 }
 
 #footer.restaurant-footer {
@@ -390,6 +397,7 @@ nav h1 a {
   position: absolute;
   width: 50%;
   text-align: center;
+  margin: auto;
 }
 
 .restaurant-header {
@@ -417,7 +425,8 @@ nav h1 a {
 }
 
 #restaurant-container {
-  display: grid;
+  display: inline-grid;
+  grid-auto-rows: auto;
   grid-template-columns: 1fr;
   grid-template-areas:
     "restaurantName"
@@ -430,10 +439,10 @@ nav h1 a {
 }
 
 #restaurant-name {
-  color: #f18200;
+  color:black;
   font-family: Arial, sans-serif;
   font-size: 20pt;
-  font-weight: 200;
+  font-weight: bold;
   letter-spacing: 0;
   text-transform: uppercase;
   line-height: 1.1;
@@ -441,13 +450,13 @@ nav h1 a {
 
 #restaurant-name-div {
   grid-area: restaurantName;
+  margin: auto;
   text-align: center;
 }
 
 #restaurant-img {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   max-width: 100%;
   min-width: 100%;
   width: 100%;
@@ -461,6 +470,7 @@ nav h1 a {
   overflow: hidden;
   border: 10px solid geen;
   border-radius: 5px;
+  margin: auto;
 }
 
 #restaurant-address {
@@ -468,6 +478,7 @@ nav h1 a {
   font-size: 12pt;
   text-align: center;
   align-self: center;
+  margin: auto;
 }
 
 #restaurant-cuisine {
@@ -483,6 +494,7 @@ nav h1 a {
   text-transform: uppercase;
   font-weight: bold;
   width: auto;
+
 }
 
 #restaurant-container, #reviews-container {
@@ -500,40 +512,48 @@ nav h1 a {
 #reviews-container-div {
   grid-area: reviewsContainer;
   position: relative;
+  width: auto;
 }
 
 #reviews-container {
-  padding: 30px 40px 80px;
   overflow-y: scroll;
+  padding-left: 0;
+  padding-top: 5px;
+
 }
 
 #reviews-container h2 {
-  color: #f58500;
+  color: black;
   font-size: 24pt;
-  font-weight: 300;
+  font-weight: bold;
   letter-spacing: -1px;
   padding-bottom: 1pt;
+  text-align: center;
 }
 
 #reviews-list {
-  margin: 0;
-  padding: 0;
-}
+  display: inline-grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  }
 
 #reviews-list li {
   background-color: #fff;
   border: 2px solid #f3f3f3;
   display: block;
   list-style-type: none;
-  margin: 0 0 30px;
+/*  margin: 0 10px 30px;*/
+align-self: center;
   overflow: hidden;
   padding: 0 20px 20px;
   position: relative;
-  width: 85%;
+
+  margin: auto;
 }
 
 #reviews-list li p {
   margin: 0 0 10px;
+  color: black;
 }
 
 #restaurant-hours-div {
@@ -560,8 +580,15 @@ nav h1 a {
   height: auto;
   position: relative;
   overflow: scroll;
+  margin: auto;
 }
 
+.namestyle{
+  text-transform: capitalize;
+  text-decoration: underline;
+  font-weight: bold;
+  padding-top: 10px;
+}
 /*========================Add @media  ============================= */
 /* media queries: https://gist.github.com/gokulkrishh/242e68d1ee94ad05f488 */
 /*
@@ -665,7 +692,9 @@ nav h1 a {
   #cuisines-select {
     width: 80%;
   }
-
+  div.errMsgClass >p{
+    font-size: 13pt;
+  }
   /*============================= filtering for restaurant.html ==================================*/
   #footer.restaurant-footer {
     width: 50%;
@@ -704,6 +733,9 @@ nav h1 a {
   #footer.restaurant-footer {
     width: 50%;
     text-align: center;
+  }
+  div.errMsgClass >p{
+    font-size: 13pt;
   }
 }
 
@@ -752,6 +784,9 @@ nav h1 a {
     width: 43%;
     text-align: center;
   }
+  div.errMsgClass >p{
+    font-size: 13pt;
+  }
 }
 
 /*
@@ -775,6 +810,10 @@ nav h1 a {
 
   #footer.restaurant-footer {
     width: auto;
+  }
+
+  div.errMsgClass >p{
+    font-size: 13pt;
   }
 }
 
@@ -810,6 +849,9 @@ nav h1 a {
   #footer.restaurant-footer {
     width: 43%;
     text-align: center;
+  }
+  div.errMsgClass >p{
+    font-size: 13pt;
   }
 }
 
@@ -892,5 +934,8 @@ nav h1 a {
 
   #footer.restaurant-footer {
     width: auto;
+  }
+  div.errMsgClass >p{
+    font-size: 13pt;
   }
 }

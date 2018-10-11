@@ -27,7 +27,7 @@ div.errMsgImg {
   text-align: center;
 }
 
-div.errMsgImg > img {
+div.errMsgImg>img {
   max-width: 100%;
   min-width: 100%;
   display: block;
@@ -37,11 +37,10 @@ div.errMsgImg > img {
   height: auto;
 }
 
-
-
-div.errMsgClass >p{
+div.errMsgClass>p {
   font-size: 15pt;
 }
+
 h1.blinking {
   text-align: center;
   text-transform: full-width;
@@ -84,20 +83,19 @@ div.errMsgClass {
   text-align: center;
 }
 
-div.errMsgClass  a {
+div.errMsgClass a {
   color: #3344dd
 }
 
 /* visited link */
 div.errMsgClass a:visited {
-    color: #884488;
+  color: #884488;
 }
 
 /* mouse over link */
 div.errMsgClass a:hover {
-    color: #bb1122;
+  color: #bb1122;
 }
-
 
 #index-body {
   display: grid;
@@ -181,7 +179,6 @@ nav {
 
 nav h1 {
   margin: auto;
-  font-weight: bold;
 }
 
 nav h1 a {
@@ -246,6 +243,7 @@ nav h1 a {
   grid-template-columns: .30fr .75fr .75fr;
   align-items: start;
   grid-template-areas: "text select1 select2";
+  grid-row-gap: 1ch;
 }
 
 .filter-options h2 {
@@ -253,10 +251,10 @@ nav h1 a {
   font-size: 1.5rem;
   font-weight: bold;
   font-family: sans-serif;
-  line-height: 1;
-  margin: 0 20px;
+  line-height: 1.5;
+  margin: auto;
   grid-area: text;
-  align-self: flex-end;
+  text-align: center;
 }
 
 .filter-options select {
@@ -294,9 +292,11 @@ nav h1 a {
   border: 2px solid #ccc;
   font-family: Arial, sans-serif;
   min-height: 380px;
+  max-width: 100%;
   padding: 0 30px 25px;
   text-align: left;
-  width: 270px;
+  width: 80%;
+
 }
 
 #restaurants-list li:hover {
@@ -348,13 +348,13 @@ nav h1 a {
 #neighborhoods-select {
   grid-area: select1;
   align-self: start;
-  width: 50%;
+  width: auto;
 }
 
 #cuisines-select {
   grid-area: select2;
-  align-self: start;
-  width: 50%;
+  justify-content: start;
+  width: auto;
 }
 
 /* ====================== Restaurant Details ====================== */
@@ -388,7 +388,8 @@ nav h1 a {
   top: 0;
   width: 100%;
   z-index: 1000;
-  margin: auto;;
+  margin: auto;
+  ;
 }
 
 #footer.restaurant-footer {
@@ -439,7 +440,7 @@ nav h1 a {
 }
 
 #restaurant-name {
-  color:black;
+  color: black;
   font-family: Arial, sans-serif;
   font-size: 20pt;
   font-weight: bold;
@@ -494,7 +495,6 @@ nav h1 a {
   text-transform: uppercase;
   font-weight: bold;
   width: auto;
-
 }
 
 #restaurant-container, #reviews-container {
@@ -511,6 +511,7 @@ nav h1 a {
 
 #reviews-container-div {
   grid-area: reviewsContainer;
+  margin: auto;
   position: relative;
   width: auto;
 }
@@ -519,7 +520,6 @@ nav h1 a {
   overflow-y: scroll;
   padding-left: 0;
   padding-top: 5px;
-
 }
 
 #reviews-container h2 {
@@ -535,19 +535,18 @@ nav h1 a {
   display: inline-grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-  }
+}
 
 #reviews-list li {
   background-color: #fff;
   border: 2px solid #f3f3f3;
   display: block;
   list-style-type: none;
-/*  margin: 0 10px 30px;*/
-align-self: center;
+  /*  margin: 0 10px 30px;*/
+  align-self: center;
   overflow: hidden;
   padding: 0 20px 20px;
   position: relative;
-
   margin: auto;
 }
 
@@ -583,12 +582,13 @@ align-self: center;
   margin: auto;
 }
 
-.namestyle{
+.namestyle {
   text-transform: capitalize;
   text-decoration: underline;
   font-weight: bold;
   padding-top: 10px;
 }
+
 /*========================Add @media  ============================= */
 /* media queries: https://gist.github.com/gokulkrishh/242e68d1ee94ad05f488 */
 /*
@@ -692,9 +692,11 @@ align-self: center;
   #cuisines-select {
     width: 80%;
   }
-  div.errMsgClass >p{
+
+  div.errMsgClass>p {
     font-size: 13pt;
   }
+
   /*============================= filtering for restaurant.html ==================================*/
   #footer.restaurant-footer {
     width: 50%;
@@ -734,7 +736,8 @@ align-self: center;
     width: 50%;
     text-align: center;
   }
-  div.errMsgClass >p{
+
+  div.errMsgClass>p {
     font-size: 13pt;
   }
 }
@@ -784,7 +787,8 @@ align-self: center;
     width: 43%;
     text-align: center;
   }
-  div.errMsgClass >p{
+
+  div.errMsgClass>p {
     font-size: 13pt;
   }
 }
@@ -812,7 +816,7 @@ align-self: center;
     width: auto;
   }
 
-  div.errMsgClass >p{
+  div.errMsgClass>p {
     font-size: 13pt;
   }
 }
@@ -850,7 +854,8 @@ align-self: center;
     width: 43%;
     text-align: center;
   }
-  div.errMsgClass >p{
+
+  div.errMsgClass>p {
     font-size: 13pt;
   }
 }
@@ -893,6 +898,8 @@ align-self: center;
     width: 70%;
     margin: auto;
     border: 1px solid black;
+    height: 40px;
+    padding-bottom: 5px;
   }
 
   #cuisines-select {
@@ -901,6 +908,7 @@ align-self: center;
     height: 50px;
     margin: auto;
     border: 1px solid black;
+    height: 40px;
   }
 
   .filter-options h2 {
@@ -935,7 +943,8 @@ align-self: center;
   #footer.restaurant-footer {
     width: auto;
   }
-  div.errMsgClass >p{
+
+  div.errMsgClass>p {
     font-size: 13pt;
   }
 }

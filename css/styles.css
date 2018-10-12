@@ -949,6 +949,8 @@ p.dateStyle {
     height: 100%;
     position: absolute;
     left: 0;
+
+
     width: auto;
   }
 
@@ -977,5 +979,6 @@ p.dateStyle {
 
   #reviews-list li p {
     font-size: 12pt;
+    width: 100%;
   }
 }

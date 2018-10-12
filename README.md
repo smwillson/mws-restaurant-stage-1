@@ -19,8 +19,8 @@ More information : https://help.github.com/articles/which-remote-url-should-i-us
 In order to run the application, navigate to the directory where the project was downloaded to.
 
 1. From inside the  directory, launch a local client server using Python from your terminal:
-### Python 2: python -m SimpleHTTPServer 8000
-### Python 3: python3 -m http.server 8000
+### _Python 2: python -m SimpleHTTPServer 8000_
+### _Python 3: python3 -m http.server 8000_
 Find out which version of Python is installed by issuing the command python --version in a terminal window.
 
 2. Visit the site in your browser at http://localhost:8000

@@ -88,6 +88,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img'
+  image.setAttribute('alt', `A picture of ${restaurant.name}`);
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
 
   const cuisine = document.getElementById('restaurant-cuisine');
@@ -140,7 +141,7 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
     return;
   }
   const ul = document.getElementById('reviews-list');
-  ul.setAttribute("tabindex",0);
+  ul.setAttribute("tabindex", 0);
   reviews.forEach(review => {
     ul.appendChild(createReviewHTML(review));
   });
@@ -152,28 +153,28 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
  */
 createReviewHTML = (review) => {
   const li = document.createElement('li');
-  li.setAttribute("tabindex",0);
+  li.setAttribute("tabindex", 0);
   const name = document.createElement('p');
   name.innerHTML = review.name;
   name.classList.add("nameStyle");
-  name.setAttribute("tabindex",0);
+  name.setAttribute("tabindex", 0);
   li.appendChild(name);
 
   const date = document.createElement('p');
   date.classList.add("dateStyle");
   date.innerHTML = review.date;
-  date.setAttribute("tabindex",0);
+  date.setAttribute("tabindex", 0);
   li.appendChild(date);
 
   const rating = document.createElement('p');
   rating.innerHTML = `Rating: ${review.rating}`;
   rating.classList.add("ratingStyle");
-  rating.setAttribute("tabindex",0);
+  rating.setAttribute("tabindex", 0);
   li.appendChild(rating);
 
   const comments = document.createElement('p');
   comments.innerHTML = review.comments;
-  comments.setAttribute("tabindex",0);
+  comments.setAttribute("tabindex", 0);
   li.appendChild(comments);
 
   return li;

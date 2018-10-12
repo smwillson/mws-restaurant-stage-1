@@ -299,7 +299,9 @@ nav h1 a {
   width: 80%;
   border-radius: 20px;
 }
-
+#restaurants-list li h2{
+  text-align: center;
+}
 #restaurants-list li:hover {
   border: 2px solid blue;
 }
@@ -502,6 +504,9 @@ nav h1 a {
   width: auto;
 }
 
+#restaurant-list h2{
+  text-align: center;
+}
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
@@ -888,7 +893,7 @@ p.dateStyle {
   ##Device = Most of the Smartphones Mobiles (Portrait)
   ##Screen = B/w 320px to 479px
 */
-@media (min-width: 320px) and (max-width: 480px) {
+@media  (max-width: 480px) {
   #displayTag {
     font-size: 1em !important;
   }
@@ -941,10 +946,9 @@ p.dateStyle {
   }
 
   #map-container.map-container-class {
-    height: 69%;
-    position: fixed;
+    height: 100%;
+    position: absolute;
     left: 0;
-    top: 10px;
     width: auto;
   }
 
@@ -955,7 +959,6 @@ p.dateStyle {
     right: 0px;
     bottom: 0px;
   }
-
   #maincontent.restaurantMainContent {
     grid-template-columns: 1fr;
     grid-template-areas:

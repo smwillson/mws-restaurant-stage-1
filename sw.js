@@ -21,6 +21,7 @@ self.addEventListener('install', e => {
           `/js/dbhelper.js`,
           `/offline.html`,
           `/js/offline.js`,
+          `/data/restaurants.json`,
           `/img/errpic1.jpg`,
           `/img/errpic2.jpg`,
           `/img/errpic3.jpg`,

@@ -11,6 +11,6 @@ var picNumber = Math.floor(Math.random() * 3);
 
 var errorImage = document.createElement('img');
 errorImage.src =errorPictureArray[picNumber];
-errorImage.setAttribute('alt','Image of my cat Nacho showcasing an error when interet is unavailable');
+errorImage.setAttribute('alt','Image of my cat Nacho TacoCat showcasing an error when interet is unavailable');
 var imgDiv = document.getElementsByClassName('errMsgImg')[0];
 imgDiv.append(errorImage);

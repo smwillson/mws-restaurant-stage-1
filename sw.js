@@ -2,7 +2,12 @@
 
 var RESTAURANTS_CACHE = 'restaurantReviewsCache';
 
-
+/*
+* This is the first event in the life cycle of the service worker. This process caches the desired content in the scope
+* of the service worker. However, the caching is dependent on the availability of the files and the
+* fulfillment of the promise. If the promise fails, service is unable to install and resources arent cached.
+*
+*/
 self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(RESTAURANTS_CACHE).then(cache => {
@@ -30,14 +35,20 @@ self.addEventListener('activate', event => {
   event.waitUntil(self.clients.claim());
 });
 
-//fetch from cache or network
+/*
+*
+*After a service worker is successfully registered and install, we either try to fetch content from cache or the network.
+*If both of those actions fails, the user is redirected to an offline page which displays some pertinent information.
+*
+*/
+
 
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.open(RESTAURANTS_CACHE)
-      .then(cache => cache.match(event.request))
-      .then(response => {
-      return response || fetch(event.request).catch(err=> {
+    .then(cache => cache.match(event.request))
+    .then(response => {
+      return response || fetch(event.request).catch(err => {
         return caches.match('/offline.html');
       });
     })

@@ -160,6 +160,7 @@ createReviewHTML = (review) => {
   li.appendChild(name);
 
   const date = document.createElement('p');
+  date.classList.add("dateStyle");
   date.innerHTML = review.date;
   date.setAttribute("tabindex",0);
   li.appendChild(date);

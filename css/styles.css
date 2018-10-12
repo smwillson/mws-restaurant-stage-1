@@ -15,7 +15,7 @@ body {
 }
 
 select:focus {
-  box-shadow: 0 0 3pt 2pt blue;
+  box-shadow: 0 0 3pt 3pt blue;
 }
 
 a:focus {
@@ -239,7 +239,7 @@ nav h1 a {
   display: grid;
   width: 100%;
   height: 100%;
-  background-color: #3397DB;
+  background-color: #333;
   grid-template-columns: .30fr .75fr .75fr;
   align-items: start;
   grid-template-areas: "text select1 select2";
@@ -249,6 +249,7 @@ nav h1 a {
 .filter-options h2 {
   color: black;
   font-size: 1.5rem;
+  color: white;
   font-weight: bold;
   font-family: sans-serif;
   line-height: 1.5;
@@ -296,7 +297,7 @@ nav h1 a {
   padding: 0 30px 25px;
   text-align: left;
   width: 80%;
-
+  border-radius: 20px;
 }
 
 #restaurants-list li:hover {
@@ -310,6 +311,7 @@ nav h1 a {
   max-width: 100%;
   min-height: 248px;
   min-width: 100%;
+  border-radius: 10px;
 }
 
 #restaurants-list li h1 {
@@ -322,11 +324,13 @@ nav h1 a {
   margin: 20px 0 10px;
   text-transform: uppercase;
   margin: auto;
+  text-align: center;
 }
 
 #restaurants-list p {
   margin: auto;
   font-size: 11pt;
+  text-align: center;
 }
 
 #restaurants-list li a {
@@ -343,18 +347,19 @@ nav h1 a {
   text-decoration: none;
   align-self: center;
   margin: auto;
+  border-radius: 10px;
 }
 
 #neighborhoods-select {
   grid-area: select1;
   align-self: start;
-  width: auto;
+  width: 70%;
 }
 
 #cuisines-select {
   grid-area: select2;
   justify-content: start;
-  width: auto;
+  width: 70%;
 }
 
 /* ====================== Restaurant Details ====================== */
@@ -553,9 +558,8 @@ nav h1 a {
 
 #reviews-list li p {
   margin: 0 0 10px;
-  color: black;
   height: 100%;
-
+  font-size: 15pt;
 }
 
 #restaurant-hours-div {
@@ -567,13 +571,14 @@ nav h1 a {
 #restaurant-hours {
   table-layout: auto;
   width: 100%;
+
 }
 
 #restaurant-hours td {
-  color: #666;
   text-align: center;
-  resize: both;
   overflow: auto;
+  font-size: 12pt;
+  background-color:  #fff;
 }
 
 #maincontent.restaurantMainContent {
@@ -587,14 +592,26 @@ nav h1 a {
 
 p.nameStyle {
   text-transform: capitalize;
-  text-decoration: underline;
   font-weight: bold;
   padding-top: 10px;
+  background-color: #333;
+  color: white;
+  padding: 5px;
+  border-radius: 15px 0 0 0;
 }
-p.ratingStyle{
+
+p.ratingStyle {
+  display: inline;
+  background-color: orange;
+  padding: 5px;
+}
+
+p.dateStyle {
+  float: right;
   display: inline;
   background-color: orange;
 }
+
 /*========================Add @media  ============================= */
 /* media queries: https://gist.github.com/gokulkrishh/242e68d1ee94ad05f488 */
 /*
@@ -611,7 +628,8 @@ p.ratingStyle{
   }
 
   #restaurants-list {
-    grid-template-columns: repeat(3, 1fr);;
+    grid-template-columns: repeat(3, 1fr);
+    ;
     justify-content: space-evenly;
   }
 
@@ -952,5 +970,9 @@ p.ratingStyle{
 
   div.errMsgClass>p {
     font-size: 13pt;
+  }
+
+  #reviews-list li p {
+    font-size: 12pt;
   }
 }
